@@ -17,7 +17,7 @@ def main():
     if len(sys.argv) > 1:
         basepath = sys.argv[1]
 
-    dst = "./public"
+    dst = "./docs"
     if os.path.exists(dst):
         shutil.rmtree(dst)
     
