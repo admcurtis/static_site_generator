@@ -1,6 +1,11 @@
 import os
 import shutil
-from gencontent import extract_title, generate_page
+from gencontent import generate_pages_recursive
+
+dir_path_static = "./static"
+dir_path_public = "./public"
+dir_path_content = "./content"
+template_path = "./template.html"
 
 def main():
 
@@ -13,7 +18,8 @@ def main():
     src = "./static"
     copy_dir(src, dst)
 
-    generate_page("./content/index.md", "template.html", "./public/index.html")
+    print("Generating content...")
+    generate_pages_recursive(dir_path_content, template_path, dir_path_public)
 
 
 def copy_dir(src, dst):
